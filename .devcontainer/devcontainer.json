@@ -1,0 +1,65 @@
+{
+  "name": "frontend-starter",
+  "image": "mcr.microsoft.com/devcontainers/base:jammy",
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "userGid": "1001",
+      "username": "comnori",
+      "userUid": "1001"
+    },
+    "ghcr.io/devcontainers/features/java:1": {
+      "installGradle": true,
+      "installMaven": true,
+      "version": "21",
+      "jdkDistro": "ms"
+    },
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "20"
+    }
+  },
+  "postCreateCommand": {
+    "oh-my-zsh": "bash ${containerWorkspaceFolder}/.devcontainer/scripts/init.sh",
+    "Yarn enable": "corepack enable"
+  },
+  "forwardPorts": [3000],
+  "portsAttributes": {
+    "3000": {
+      "label": "Application port"
+    },
+    "64120": {
+      "label": "SonarLint"
+    }
+  },
+  "remoteEnv": {
+    "NODE_ENV": "development",
+    "PATH": "${containerEnv:PATH}"
+  },
+  "remoteUser": "comnori",
+  "customizations": {
+    "vscode": {
+      "extensions": ["comnori.js-awesome-soho-extension-pack"],
+      "settings": {
+        "extension-uninstaller.uninstall": ["vscjava.vscode-java-pack", "GatsbyHub.gatsbyhub"],
+        "editor.codeActionsOnSave": {
+          "source.fixAll": true,
+          "source.organizeImports": true
+        },
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.foldingImportsByDefault": true,
+        "editor.fontLigatures": true,
+        "editor.formatOnPaste": true,
+        "editor.formatOnSave": true,
+        "files.exclude": {
+          "**/.DS_Store": true,
+          "**/.git": true,
+          "**/.hg": true,
+          "**/.svn": true,
+          "**/CVS": true,
+          "**/node_modules": true,
+          "**/Thumbs.db": true
+        },
+        "terminal.integrated.defaultProfile.linux": "zsh"
+      }
+    }
+  }
+}
