@@ -1,5 +1,5 @@
 {
-  "name": "frontend-starter",
+  "name": "gatsby-resume",
   "image": "mcr.microsoft.com/devcontainers/base:jammy",
   "features": {
     "ghcr.io/devcontainers/features/common-utils:2": {
@@ -18,8 +18,7 @@
     }
   },
   "postCreateCommand": {
-    "oh-my-zsh": "bash ${containerWorkspaceFolder}/.devcontainer/scripts/init.sh",
-    "Yarn enable": "corepack enable"
+    "Init": "bash ${containerWorkspaceFolder}/.devcontainer/scripts/init.sh"
   },
   "forwardPorts": [3000],
   "portsAttributes": {
@@ -31,20 +30,21 @@
     }
   },
   "remoteEnv": {
-    "NODE_ENV": "development",
-    "PATH": "${containerEnv:PATH}"
+    "NODE_ENV": "development"
+    // "PATH": "${containerEnv:PATH}:/home/comnori/.yarn/bin"
   },
   "remoteUser": "comnori",
   "customizations": {
     "vscode": {
-      "extensions": ["comnori.js-awesome-soho-extension-pack"],
+      "extensions": ["comnori.js-awesome-soho-extension-pack", "GatsbyHub.gatsbyhub"],
       "settings": {
-        "extension-uninstaller.uninstall": ["vscjava.vscode-java-pack", "GatsbyHub.gatsbyhub"],
+        "extension-uninstaller.uninstall": ["vscjava.vscode-java-pack"],
         "editor.codeActionsOnSave": {
           "source.fixAll": true,
           "source.organizeImports": true
         },
         "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.fontFamily": "'D2Coding ligature',Menlo, Monaco, 'Courier New', monospace",
         "editor.foldingImportsByDefault": true,
         "editor.fontLigatures": true,
         "editor.formatOnPaste": true,
@@ -58,7 +58,8 @@
           "**/node_modules": true,
           "**/Thumbs.db": true
         },
-        "terminal.integrated.defaultProfile.linux": "zsh"
+        "terminal.integrated.defaultProfile.linux": "zsh",
+        "terminal.integrated.fontFamily": "'D2codingLigature Nerd Font Mono', monospace"
       }
     }
   }
