@@ -10,7 +10,9 @@ sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/v1.1
 
 corepack enable
 
-yarn global add gatsby-cli
+yarn set version berry
+yarn dlx @yarnpkg/sdks vscode
+yarn dlx gatsby-cli
 
 cat << EOF >> ~/.zshrc
 
@@ -20,3 +22,4 @@ if [ -d "\$HOME/.yarn/bin" ] ; then
 fi
 EOF
 
+gatsby telemetry --disable
