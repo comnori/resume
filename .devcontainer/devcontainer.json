@@ -2,11 +2,6 @@
   "name": "gatsby-resume",
   "image": "mcr.microsoft.com/devcontainers/base:jammy",
   "features": {
-    "ghcr.io/devcontainers/features/common-utils:2": {
-      "userGid": "1001",
-      "username": "comnori",
-      "userUid": "1001"
-    },
     "ghcr.io/devcontainers/features/java:1": {
       "installGradle": true,
       "installMaven": true,
@@ -18,12 +13,14 @@
     }
   },
   "postCreateCommand": {
-    "Init": "bash ${containerWorkspaceFolder}/.devcontainer/scripts/init.sh >> ${containerWorkspaceFolder}/init.log"
+    "Init": "${containerWorkspaceFolder}/.devcontainer/scripts/init.sh"
   },
-  "forwardPorts": [3000],
+  "forwardPorts": [
+    8080
+  ],
   "portsAttributes": {
-    "3000": {
-      "label": "Application port"
+    "8080": {
+      "label": "Gatsby development server"
     },
     "64120": {
       "label": "SonarLint"
@@ -31,20 +28,20 @@
   },
   "remoteEnv": {
     "NODE_ENV": "development"
-    // "PATH": "${containerEnv:PATH}:/home/comnori/.yarn/bin"
   },
-  "remoteUser": "comnori",
+  "remoteUser": "vscode",
   "customizations": {
     "vscode": {
       "extensions": [
         "comnori.js-awesome-soho-extension-pack",
         "GatsbyHub.gatsbyhub",
         "unifiedjs.vscode-mdx",
-        "yzhang.markdown-all-in-one",
-        "arcanis.vscode-zipfs"
+        "yzhang.markdown-all-in-one"
       ],
       "settings": {
-        "extension-uninstaller.uninstall": ["vscjava.vscode-java-pack"],
+        "extension-uninstaller.uninstall": [
+          "vscjava.vscode-java-pack"
+        ],
         "editor.codeActionsOnSave": {
           "source.fixAll": true,
           "source.organizeImports": true

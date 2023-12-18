@@ -2,5 +2,7 @@
   "embeddedLanguageFormatting": "auto",
   "bracketSameLine": true,
   "singleAttributePerLine": true,
-  "printWidth": 120
+  "printWidth": 120,
+  "arrowParens": "avoid",
+  "semi": false
 }

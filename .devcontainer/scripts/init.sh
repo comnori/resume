@@ -1,4 +1,4 @@
-#/bin/sh
+#/bin/bash
 sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/v1.1.5/zsh-in-docker.sh)" -- \
   -t jonathan \
   -p git \
@@ -10,9 +10,8 @@ sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/v1.1
 
 corepack enable
 
-yarn set version berry
-yarn dlx @yarnpkg/sdks vscode
-yarn dlx gatsby-cli
+yarn install
+yarn global add gatsby-cli
 
 cat << EOF >> ~/.zshrc
 
@@ -21,5 +20,3 @@ if [ -d "\$HOME/.yarn/bin" ] ; then
   PATH="\$(yarn global bin):\$PATH"
 fi
 EOF
-
-gatsby telemetry --disable
