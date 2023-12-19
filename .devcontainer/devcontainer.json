@@ -30,14 +30,10 @@
   "remoteUser": "vscode",
   "customizations": {
     "vscode": {
-      "extensions": [
-        "comnori.js-awesome-soho-extension-pack",
-        "GatsbyHub.gatsbyhub",
-        "unifiedjs.vscode-mdx",
-        "yzhang.markdown-all-in-one"
-      ],
+      "extensions": ["comnori.js-awesome-soho-extension-pack", "unifiedjs.vscode-mdx", "yzhang.markdown-all-in-one"],
       "settings": {
         "extension-uninstaller.uninstall": ["vscjava.vscode-java-pack"],
+        // editor
         "editor.codeActionsOnSave": {
           "source.fixAll": true,
           "source.organizeImports": true
@@ -48,6 +44,7 @@
         "editor.fontLigatures": true,
         "editor.formatOnPaste": true,
         "editor.formatOnSave": true,
+        // files
         "files.exclude": {
           "**/.DS_Store": true,
           "**/.git": true,
@@ -55,8 +52,10 @@
           "**/.svn": true,
           "**/CVS": true,
           "**/node_modules": true,
-          "**/Thumbs.db": true
+          "**/Thumbs.db": true,
+          "**/.cache": true
         },
+        //terminal
         "terminal.integrated.defaultProfile.linux": "zsh",
         "terminal.integrated.fontFamily": "'D2codingLigature Nerd Font Mono', monospace",
         //telemetry
