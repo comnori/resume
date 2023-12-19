@@ -6,7 +6,7 @@ import { BasicLayoutProps } from "./BasicLayoutInterface"
 
 const { Content, Footer } = Layout
 
-const BasicLayout: React.FC<BasicLayoutProps> = ({ children }) => {
+const BasicLayout: React.FC<BasicLayoutProps> = ({ children, selectedMenuKey }) => {
   return (
     <Layout>
       <Header />
