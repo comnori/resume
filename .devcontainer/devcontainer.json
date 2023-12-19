@@ -15,9 +15,7 @@
   "postCreateCommand": {
     "Init": "${containerWorkspaceFolder}/.devcontainer/scripts/init.sh"
   },
-  "forwardPorts": [
-    8080
-  ],
+  "forwardPorts": [8080],
   "portsAttributes": {
     "8080": {
       "label": "Gatsby development server"
@@ -39,9 +37,7 @@
         "yzhang.markdown-all-in-one"
       ],
       "settings": {
-        "extension-uninstaller.uninstall": [
-          "vscjava.vscode-java-pack"
-        ],
+        "extension-uninstaller.uninstall": ["vscjava.vscode-java-pack"],
         "editor.codeActionsOnSave": {
           "source.fixAll": true,
           "source.organizeImports": true
@@ -62,7 +58,10 @@
           "**/Thumbs.db": true
         },
         "terminal.integrated.defaultProfile.linux": "zsh",
-        "terminal.integrated.fontFamily": "'D2codingLigature Nerd Font Mono', monospace"
+        "terminal.integrated.fontFamily": "'D2codingLigature Nerd Font Mono', monospace",
+        //telemetry
+        "gitlens.telemetry.enabled": false,
+        "sonarlint.disableTelemetry": true
       }
     }
   }
