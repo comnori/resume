@@ -12,6 +12,7 @@ sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/v1.1
 corepack enable
 
 yarn install
+
 yarn global add gatsby-cli
 
 cat << EOF >> ~/.zshrc
@@ -20,4 +21,14 @@ cat << EOF >> ~/.zshrc
 if [ -d "\$HOME/.yarn/bin" ] ; then
   PATH="\$(yarn global bin):\$PATH"
 fi
+EOF
+
+mkdir -p ~/.config/gatsby
+
+cat << EOF >> ~/.config/gatsby/config.json
+{
+  "cli": {
+    "packageManager": "yarn",
+  }
+}
 EOF

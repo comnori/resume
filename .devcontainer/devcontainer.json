@@ -26,6 +26,8 @@
   },
   "remoteEnv": {
     "NODE_ENV": "development"
+    "NODE_ENV": "development",
+    "GATSBY_TELEMETRY_DISABLED": "1"
   },
   "remoteUser": "vscode",
   "customizations": {
