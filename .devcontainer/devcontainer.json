@@ -15,9 +15,9 @@
   "postCreateCommand": {
     "Init": "${containerWorkspaceFolder}/.devcontainer/scripts/init.sh"
   },
-  "forwardPorts": [8080],
+  "forwardPorts": [8000],
   "portsAttributes": {
-    "8080": {
+    "8000": {
       "label": "Gatsby development server"
     },
     "64120": {
@@ -25,7 +25,6 @@
     }
   },
   "remoteEnv": {
-    "NODE_ENV": "development"
     "NODE_ENV": "development",
     "GATSBY_TELEMETRY_DISABLED": "1"
   },
