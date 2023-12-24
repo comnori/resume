@@ -5,7 +5,8 @@
   "author": "Yongsik Yun <comnori@gmail.com>",
   "keywords": [
     "gatsby",
-    "resume"
+    "resume",
+    "gatsby-starter"
   ],
   "license": "MIT",
   "dependencies": {
@@ -13,8 +14,6 @@
     "@emotion/react": "^11.11.3",
     "@mdx-js/react": "^3.0.0",
     "antd": "^5.12.5",
-    "eslint": "^8.56.0",
-    "eslint-config-react-app": "^7.0.1",
     "gatsby": "^5.13.0",
     "gatsby-plugin-google-gtag": "^5.13.0",
     "gatsby-plugin-image": "^3.13.0",
@@ -24,9 +23,14 @@
     "gatsby-plugin-sitemap": "^6.13.0",
     "gatsby-source-filesystem": "^5.13.0",
     "gatsby-transformer-sharp": "^5.13.0",
-    "prettier": "^2.8.8",
+    "gh-pages": "^6.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "eslint-config-react-app": "^7.0.1",
+    "prettier": "^2.8.8"
   },
   "scripts": {
     "develop": "gatsby develop",
@@ -38,7 +42,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/comnori/resume.git"
+    "url": "https://github.com/comnori/resume"
   },
   "bugs": {
     "url": "https://github.com/comnori/resume/issues"
