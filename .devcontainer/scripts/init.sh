@@ -1,7 +1,5 @@
 #/bin/bash
 
-git config --global init.defaultBranch main
-
 sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/v1.1.5/zsh-in-docker.sh)" -- \
   -t jonathan \
   -p git \
@@ -11,11 +9,13 @@ sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/v1.1
   -p https://github.com/zsh-users/zsh-autosuggestions \
   -p https://github.com/zsh-users/zsh-completions
 
-corepack enable
+sh -c "corepack enable"
 
-yarn install
+sh -c "yarn global add gatsby-cli"
 
-yarn global add gatsby-cli
+sh -c "yarn install"
+
+sh -c "git config --global init.defaultBranch main"
 
 cat << EOF >> ~/.zshrc
 
@@ -25,7 +25,7 @@ if [ -d "\$HOME/.yarn/bin" ] ; then
 fi
 EOF
 
-mkdir -p ~/.config/gatsby
+sh -c "mkdir -p ~/.config/gatsby"
 
 cat << EOF >> ~/.config/gatsby/config.json
 {
