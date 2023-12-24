@@ -9,9 +9,13 @@
   ],
   "license": "MIT",
   "dependencies": {
+    "@ant-design/icons": "^5.2.6",
     "@emotion/react": "^11.11.3",
     "@mdx-js/react": "^3.0.0",
     "@theme-ui/mdx": "^0.16.1",
+    "antd": "^5.12.5",
+    "eslint": "^8.56.0",
+    "eslint-config-react-app": "^7.0.1",
     "gatsby": "^5.13.0",
     "gatsby-plugin-google-gtag": "^5.13.0",
     "gatsby-plugin-image": "^3.13.0",
@@ -22,12 +26,10 @@
     "gatsby-plugin-theme-ui": "^0.16.1",
     "gatsby-source-filesystem": "^5.13.0",
     "gatsby-transformer-sharp": "^5.13.0",
+    "prettier": "^2.8.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "theme-ui": "^0.16.1",
-    "eslint": "^8.56.0",
-    "eslint-config-react-app": "^7.0.1",
-    "prettier": "^2.8.8"
+    "theme-ui": "^0.16.1"
   },
   "scripts": {
     "develop": "gatsby develop",

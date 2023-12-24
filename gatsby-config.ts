@@ -18,10 +18,8 @@ module.exports = {
         trackingIds: [process.env.GA_ID],
         pluginConfig: {
           head: true,
-          // Setting this parameter is also optional
           respectDNT: true,
           exclude: [],
-          // origin: "YOUR_SELF_HOSTED_ORIGIN",
           delayOnRouteUpdate: 0,
         },
       },
