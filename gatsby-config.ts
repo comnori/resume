@@ -1,16 +1,31 @@
-import type { GatsbyConfig } from "gatsby"
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
 
-const config: GatsbyConfig = {
+/**
+ * @type {import('gatsby').GatsbyConfig}
+ */
+module.exports = {
   siteMetadata: {
     title: `comnori's Resume`,
     siteUrl: `https://comnori.github.com/resume`,
   },
-  // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
-  // If you use VSCode you can also use the GraphQL plugin
-  // Learn more at: https://gatsby.dev/graphql-typegen
-  graphqlTypegen: true,
   plugins: [
-    "gatsby-plugin-postcss",
+    "gatsby-plugin-theme-ui",
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: [process.env.GA_ID],
+        pluginConfig: {
+          head: true,
+          // Setting this parameter is also optional
+          respectDNT: true,
+          exclude: [],
+          // origin: "YOUR_SELF_HOSTED_ORIGIN",
+          delayOnRouteUpdate: 0,
+        },
+      },
+    },
     "gatsby-plugin-image",
     "gatsby-plugin-sitemap",
     {
@@ -40,5 +55,3 @@ const config: GatsbyConfig = {
     },
   ],
 }
-
-export default config
