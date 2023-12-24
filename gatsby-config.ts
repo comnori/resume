@@ -11,7 +11,6 @@ module.exports = {
     siteUrl: `https://comnori.github.com/resume`,
   },
   plugins: [
-    "gatsby-plugin-theme-ui",
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
