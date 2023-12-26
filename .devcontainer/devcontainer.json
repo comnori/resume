@@ -32,7 +32,12 @@
   "remoteUser": "vscode",
   "customizations": {
     "vscode": {
-      "extensions": ["comnori.js-awesome-soho-extension-pack", "unifiedjs.vscode-mdx", "yzhang.markdown-all-in-one"],
+      "extensions": [
+        "comnori.js-awesome-soho-extension-pack",
+        "unifiedjs.vscode-mdx",
+        "yzhang.markdown-all-in-one",
+        "CS50.extension-uninstaller"
+      ],
       "settings": {
         "extension-uninstaller.uninstall": ["vscjava.vscode-java-pack"],
         // editor
@@ -62,7 +67,9 @@
         "terminal.integrated.fontFamily": "'D2codingLigature Nerd Font Mono', monospace",
         //telemetry
         "gitlens.telemetry.enabled": false,
-        "sonarlint.disableTelemetry": true
+        "sonarlint.disableTelemetry": true,
+        //apparence
+        "workbench.iconTheme": "material-icon-theme"
       }
     }
   }
