@@ -2,13 +2,14 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
-/**
- * @type {import('gatsby').GatsbyConfig}
- */
+const path = require("path")
+
+const gatsbyRequiredRules = path.join(process.cwd(), "node_modules", "gatsby", "dist", "utils", "eslint-rules")
+
 module.exports = {
   siteMetadata: {
-    title: `comnori's Resume`,
-    siteUrl: `https://comnori.github.com/resume`,
+    title: `Developer Yongsik Yun!`,
+    siteUrl: `https://comnori.co.kr`,
   },
   plugins: [
     {
