@@ -2,12 +2,6 @@
   "name": "gatsby-resume",
   "image": "mcr.microsoft.com/devcontainers/base:jammy",
   "features": {
-    "ghcr.io/devcontainers/features/java:1": {
-      "installGradle": true,
-      "installMaven": true,
-      "version": "21",
-      "jdkDistro": "ms"
-    },
     "ghcr.io/devcontainers/features/node:1": {
       "version": "20"
     }
@@ -20,14 +14,11 @@
   "portsAttributes": {
     "8000": {
       "label": "Gatsby development server"
-    },
-    "64120": {
-      "label": "SonarLint"
     }
   },
   "remoteEnv": {
     "NODE_ENV": "development",
-    "GATSBY_TELEMETRY_DISABLED": "1"
+    "GATSBY_TELEMETRY_DISABLED": "1",
     "TZ": "Asia/Seoul"
   },
   "remoteUser": "vscode",
@@ -42,7 +33,7 @@
         "GraphQL.vscode-graphql-syntax"
       ],
       "settings": {
-        "extension-uninstaller.uninstall": ["vscjava.vscode-java-pack", "dbaeumer.vscode-eslint"],
+        "extension-uninstaller.uninstall": ["dbaeumer.vscode-eslint", "SonarSource.sonarlint-vscode"],
         // editor
         "editor.codeActionsOnSave": {
           "source.fixAll": true,
