@@ -71,7 +71,9 @@
         "gitlens.telemetry.enabled": false,
         "sonarlint.disableTelemetry": true,
         //apparence
-        "workbench.iconTheme": "material-icon-theme"
+        "workbench.iconTheme": "material-icon-theme",
+        //diff
+        "semanticdiff.defaultDiffViewer": true
       }
     }
   }
