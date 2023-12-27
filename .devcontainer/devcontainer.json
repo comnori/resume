@@ -28,6 +28,7 @@
   "remoteEnv": {
     "NODE_ENV": "development",
     "GATSBY_TELEMETRY_DISABLED": "1"
+    "TZ": "Asia/Seoul"
   },
   "remoteUser": "vscode",
   "customizations": {
