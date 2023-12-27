@@ -41,7 +41,7 @@
         "GraphQL.vscode-graphql-syntax"
       ],
       "settings": {
-        "extension-uninstaller.uninstall": ["vscjava.vscode-java-pack"],
+        "extension-uninstaller.uninstall": ["vscjava.vscode-java-pack", "dbaeumer.vscode-eslint"],
         // editor
         "editor.codeActionsOnSave": {
           "source.fixAll": true,
