@@ -9,7 +9,7 @@ const BasicLayout = ({ children, style }) => {
   return (
     <Layout style={style}>
       <Header />
-      <Content style={{ height: "100%", paddingTop: "1em" }}>{children}</Content>
+      <Content style={{ height: "100%", padding: "10px 50px" }}>{children}</Content>
       <Footer />
     </Layout>
   )

@@ -4,6 +4,10 @@ import "./src/styles/global.css"
 import React from "react"
 
 import { ConfigProvider, theme as antdTheme } from "antd"
+import "katex/dist/katex.min.css"
+import "prismjs/plugins/command-line/prism-command-line.css"
+import "prismjs/plugins/line-numbers/prism-line-numbers.css"
+import "prismjs/themes/prism-tomorrow.css"
 
 const algorithmList = {
   light: antdTheme.defaultAlgorithm,
@@ -16,7 +20,7 @@ export const wrapRootElement = ({ element }) => {
   return (
     <ConfigProvider
       locale={ko_KR}
-      theme={{ algorithm: algorithmList[getSystemCurrentTheme] }}
+      theme={{ algorithm: algorithmList["dark"] }}
       componentSize="large">
       {element}
     </ConfigProvider>

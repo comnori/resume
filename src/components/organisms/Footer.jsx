@@ -30,8 +30,7 @@ const Footer = () => {
           <Space align="center">
             <Text></Text>
             <Space split={<Divider type="vertical" />}>
-              <Text>© All rights are reserved</Text>
-              <Text>2023</Text>
+              <Text>© All rights are reserved. 2020</Text>
               <Space>
                 <MailOutlined />
                 <Typography.Link

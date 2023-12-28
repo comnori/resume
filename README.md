@@ -69,6 +69,10 @@ This gatsby starter was written to be used for resume, portfolios, and blogs.
 -   [Adding a Redux Store](https://www.gatsbyjs.com/docs/adding-redux-store/)
 -   [How Gatsby Works with GitHub Pages](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/how-gatsby-works-with-github-pages/)
 
+### MDX
+
+-   [Components](https://mdxjs.com/table-of-components/)
+
 ### Libraries
 
 -   [Ant Design](https://ant.design/)
