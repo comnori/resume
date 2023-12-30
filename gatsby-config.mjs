@@ -1,11 +1,17 @@
-require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
-})
+import dotenv from "dotenv"
+import rehypeAutolinkHeadings from "rehype-autolink-headings"
+import rehypeSlug from "rehype-slug"
+import remarkExternalLinks from "remark-external-links"
+import remarkGfm from "remark-gfm"
+
+dotenv.config({ path: `.env.${process.env.NODE_ENV}` })
 
 const config = {
   siteMetadata: {
     title: `Developer Yongsik Yun!`,
     siteUrl: `https://comnori.co.kr`,
+    twitterUsername: `@comnori`,
+    image: `src/images/icon.png`,
   },
   plugins: [
     {
@@ -54,7 +60,17 @@ const config = {
               strict: `ignore`,
             },
           },
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 590,
+            },
+          },
         ],
+        mdxOptions: {
+          remarkPlugins: [remarkGfm, [remarkExternalLinks, { target: false }]],
+          rehypePlugins: [rehypeSlug, [rehypeAutolinkHeadings, { behavior: `wrap` }]],
+        },
       },
     },
     {

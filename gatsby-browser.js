@@ -20,7 +20,7 @@ export const wrapRootElement = ({ element }) => {
   return (
     <ConfigProvider
       locale={ko_KR}
-      theme={{ algorithm: algorithmList["dark"] }}
+      theme={{ algorithm: algorithmList[getSystemCurrentTheme] }}
       componentSize="large">
       {element}
     </ConfigProvider>

@@ -10,9 +10,7 @@
       "request": "launch",
       "program": "${workspaceRoot}/node_modules/.bin/gatsby",
       "console": "integratedTerminal",
-      "args": [
-        "develop"
-      ],
+      "args": ["develop", "--verbose"],
       "stopOnEntry": false,
       "sourceMaps": false
     },
@@ -21,9 +19,7 @@
       "type": "node",
       "request": "launch",
       "program": "${workspaceRoot}/node_modules/.bin/gatsby",
-      "args": [
-        "build"
-      ],
+      "args": ["build"],
       "console": "integratedTerminal",
       "sourceMaps": false
     }

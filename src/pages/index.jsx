@@ -18,7 +18,7 @@ const IndexPage = ({ data }) => {
             <Flex justify="space-between">
               <GatsbyImage
                 image={cardImage}
-                style={{ display: "block", width: 273 }}
+                style={{ display: "block" }}
                 alt="avatar"
               />
               <Flex
@@ -26,10 +26,10 @@ const IndexPage = ({ data }) => {
                 align="flex-end"
                 justify="space-between"
                 style={{ padding: 32 }}>
-                <Typography.Title level={3}>
+                <Typography>
                   <Title>Hello, I'm Yongsik Yun! 🤚</Title>
                   <Title level={2}>- A FULL-STACK WEB DEVELOPER</Title>
-                </Typography.Title>
+                </Typography>
               </Flex>
             </Flex>
           </Card>
@@ -47,7 +47,7 @@ export const query = graphql`
   query {
     file(relativePath: { eq: "icon.png" }) {
       childImageSharp {
-        gatsbyImageData(width: 273)
+        gatsbyImageData(width: 512)
       }
     }
   }
@@ -55,4 +55,14 @@ export const query = graphql`
 
 export default IndexPage
 
-export const Head = () => <title>Home Page</title>
+export const Head = () => {
+  return (
+    <>
+      <title>Home Page</title>
+      <meta
+        name="desciption"
+        content="Developer Comnori's homepage"
+      />
+    </>
+  )
+}

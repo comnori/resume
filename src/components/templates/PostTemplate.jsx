@@ -4,7 +4,7 @@ import { graphql } from "gatsby"
 import React from "react"
 import BasicLayout from "./BasicLayout"
 
-const { Title, Text, Paragraph } = Typography
+const { Title, Paragraph } = Typography
 
 const components = {
   hr: Divider,

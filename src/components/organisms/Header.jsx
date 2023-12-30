@@ -1,10 +1,11 @@
 import { EditOutlined, IdcardOutlined, ProjectOutlined, UserOutlined } from "@ant-design/icons"
 import { Avatar, Col, Layout, Menu, Row } from "antd"
+import { navigate } from "gatsby"
 import * as React from "react"
 
 const { Header: AntdHeader } = Layout
 
-const items = [
+const itemList = [
   {
     label: "About ME",
     key: "home",
@@ -22,7 +23,17 @@ const items = [
   },
 ]
 
+const urlList = {
+  home: "/",
+  app: "/my-work",
+  blog: "/blog",
+}
+
 const Header = () => {
+  function handleMenuCLick({ key }) {
+    navigate(urlList[key])
+  }
+
   return (
     <AntdHeader>
       <Row justify="space-between">
@@ -30,7 +41,8 @@ const Header = () => {
           <Menu
             theme="dark"
             mode="horizontal"
-            items={items}
+            items={itemList}
+            onClick={handleMenuCLick}
           />
         </Col>
         <Col>

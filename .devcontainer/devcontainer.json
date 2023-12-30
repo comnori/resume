@@ -2,6 +2,9 @@
   "name": "gatsby-resume",
   "image": "mcr.microsoft.com/devcontainers/base:jammy",
   "features": {
+    "ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
+      "packages": "xsel"
+    },
     "ghcr.io/devcontainers/features/node:1": {
       "version": "20"
     }
