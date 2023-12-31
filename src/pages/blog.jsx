@@ -24,6 +24,10 @@ const BlogPage = ({
     return { title, date, url: slug, id, body, description }
   })
 
+  const handleListItemClick = e => {
+    console.log(e)
+  }
+
   return (
     <BasicLayout style={{ minHeight: "100%" }}>
       <Typography>
@@ -36,16 +40,17 @@ const BlogPage = ({
         pagination={{ pageSize: perPage, position: "bottom", align: "center", total: totalCount, current: currentPage }}
         dataSource={blogList}
         grid={{ gutter: 16, column: 3 }}
+        rowKey={"id"}
         renderItem={({ id, title, date, url, body, description }) => (
           <List.Item
-            key={id}
             extra={
               <img
                 width={272}
                 alt="logo"
                 src="https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png"
               />
-            }>
+            }
+            onClick={() => handleListItemClick(id)}>
             <List.Item.Meta
               title={title}
               description={description}
