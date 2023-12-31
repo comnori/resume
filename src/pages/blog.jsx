@@ -6,6 +6,7 @@ import * as React from "react"
 const { Title } = Typography
 
 const BlogPage = ({
+  location: { pathname, search, hash },
   data: {
     allMdx: {
       edges,
@@ -34,6 +35,7 @@ const BlogPage = ({
         size="large"
         pagination={{ pageSize: perPage, position: "bottom", align: "center", total: totalCount, current: currentPage }}
         dataSource={blogList}
+        grid={{ gutter: 16, column: 3 }}
         renderItem={({ id, title, date, url, body, description }) => (
           <List.Item
             key={id}
@@ -71,7 +73,7 @@ export const Head = () => {
 
 export const query = graphql`
   query MyQuery {
-    allMdx(limit: 10, sort: { frontmatter: { date: DESC } }) {
+    allMdx(skip: 0, limit: 10, sort: { frontmatter: { date: DESC } }) {
       edges {
         node {
           frontmatter {
