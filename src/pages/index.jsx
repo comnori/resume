@@ -1,10 +1,9 @@
 import { Card, Col, Flex, List, Row, Typography } from "antd"
-
+import BasicLayout from "components/templates/BasicLayout"
+import { motion } from "framer-motion"
+import { graphql, navigate } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import * as React from "react"
-
-import BasicLayout from "components/templates/BasicLayout"
-import { graphql } from "gatsby"
 
 const { Title } = Typography
 
@@ -24,6 +23,10 @@ const IndexPage = ({
 
     return { title, date, url: slug, id, description }
   })
+
+  const handleListItemClick = url => {
+    navigate(`/posts${url}`)
+  }
 
   return (
     <BasicLayout style={{ minHeight: "100%" }}>
@@ -53,25 +56,28 @@ const IndexPage = ({
       <Typography>
         <Title>LATEST FROM THE BLOG</Title>
         <List
-          itemLayout="vertical"
           size="large"
           dataSource={lastestBlogList}
-          grid={{ gutter: 16, column: 3 }}
-          renderItem={({ id, title, description }) => (
-            <List.Item
-              key={id}
-              extra={
-                <img
-                  width={272}
-                  alt="logo"
-                  src="https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png"
+          rowKey={"id"}
+          renderItem={({ title, url, description }) => (
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 1 }}>
+              <List.Item
+                extra={
+                  <img
+                    width={272}
+                    alt="logo"
+                    src="https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png"
+                  />
+                }
+                onClick={() => handleListItemClick(url)}>
+                <List.Item.Meta
+                  title={title}
+                  description={description}
                 />
-              }>
-              <List.Item.Meta
-                title={title}
-                description={description}
-              />
-            </List.Item>
+              </List.Item>
+            </motion.div>
           )}
         />
         <Title>MY WORKS</Title>

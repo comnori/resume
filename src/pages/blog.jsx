@@ -1,6 +1,7 @@
 import { List, Typography } from "antd"
 import BasicLayout from "components/templates/BasicLayout"
-import { graphql } from "gatsby"
+import { motion } from "framer-motion"
+import { graphql, navigate } from "gatsby"
 import * as React from "react"
 
 const { Title } = Typography
@@ -24,38 +25,36 @@ const BlogPage = ({
     return { title, date, url: slug, id, body, description }
   })
 
-  const handleListItemClick = e => {
-    console.log(e)
+  const handleListItemClick = url => {
+    navigate(`/posts${url}`)
   }
 
   return (
     <BasicLayout style={{ minHeight: "100%" }}>
-      <Typography>
-        <Title>Blog</Title>
-        <Title level={2}>LATEST FROM THE BLOG</Title>
-      </Typography>
       <List
         itemLayout="vertical"
-        size="large"
         pagination={{ pageSize: perPage, position: "bottom", align: "center", total: totalCount, current: currentPage }}
         dataSource={blogList}
-        grid={{ gutter: 16, column: 3 }}
         rowKey={"id"}
-        renderItem={({ id, title, date, url, body, description }) => (
-          <List.Item
-            extra={
-              <img
-                width={272}
-                alt="logo"
-                src="https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png"
+        renderItem={({ title, url, description }) => (
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 1 }}>
+            <List.Item
+              extra={
+                <img
+                  width={272}
+                  alt="logo"
+                  src="https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png"
+                />
+              }
+              onClick={() => handleListItemClick(url)}>
+              <List.Item.Meta
+                title={title}
+                description={description}
               />
-            }
-            onClick={() => handleListItemClick(id)}>
-            <List.Item.Meta
-              title={title}
-              description={description}
-            />
-          </List.Item>
+            </List.Item>
+          </motion.div>
         )}
       />
     </BasicLayout>
@@ -88,7 +87,6 @@ export const query = graphql`
             description
           }
           id
-          body
         }
       }
       pageInfo {

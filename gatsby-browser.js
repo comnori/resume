@@ -4,6 +4,7 @@ import "./src/styles/global.css"
 import React from "react"
 
 import { ConfigProvider, theme as antdTheme } from "antd"
+import { LazyMotion, domAnimation } from "framer-motion"
 import "katex/dist/katex.min.css"
 import "prismjs/plugins/command-line/prism-command-line.css"
 import "prismjs/plugins/line-numbers/prism-line-numbers.css"
@@ -22,7 +23,7 @@ export const wrapRootElement = ({ element }) => {
       locale={ko_KR}
       theme={{ algorithm: algorithmList[getSystemCurrentTheme] }}
       componentSize="large">
-      {element}
+      <LazyMotion features={domAnimation}>{element}</LazyMotion>
     </ConfigProvider>
   )
 }
