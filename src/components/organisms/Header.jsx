@@ -1,7 +1,7 @@
-import { EditOutlined, IdcardOutlined, ProjectOutlined, UserOutlined } from "@ant-design/icons"
-import { Avatar, Col, Layout, Menu, Row } from "antd"
+import { EditOutlined, IdcardOutlined, ProjectOutlined } from "@ant-design/icons"
+import { Col, Layout, Menu, Row } from "antd"
 import { navigate } from "gatsby"
-import * as React from "react"
+import React from "react"
 
 const { Header: AntdHeader } = Layout
 
@@ -44,9 +44,6 @@ const Header = () => {
             items={itemList}
             onClick={handleMenuCLick}
           />
-        </Col>
-        <Col>
-          <Avatar icon={<UserOutlined />} />
         </Col>
       </Row>
     </AntdHeader>

@@ -1,29 +1,14 @@
-import ko_KR from "antd/locale/ko_KR"
 import "./src/styles/global.css"
 
 import React from "react"
 
-import { ConfigProvider, theme as antdTheme } from "antd"
-import { LazyMotion, domAnimation } from "framer-motion"
 import "katex/dist/katex.min.css"
 import "prismjs/plugins/command-line/prism-command-line.css"
 import "prismjs/plugins/line-numbers/prism-line-numbers.css"
 import "prismjs/themes/prism-tomorrow.css"
 
-const algorithmList = {
-  light: antdTheme.defaultAlgorithm,
-  dark: antdTheme.darkAlgorithm,
-}
+import CustomConfigProdiver from "./src/context/antd/CustomConfigProdiver"
 
 export const wrapRootElement = ({ element }) => {
-  const getSystemCurrentTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
-
-  return (
-    <ConfigProvider
-      locale={ko_KR}
-      theme={{ algorithm: algorithmList[getSystemCurrentTheme] }}
-      componentSize="large">
-      <LazyMotion features={domAnimation}>{element}</LazyMotion>
-    </ConfigProvider>
-  )
+  return <CustomConfigProdiver element={element} />
 }

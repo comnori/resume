@@ -1,10 +1,19 @@
-import { List, Typography } from "antd"
+import { FieldTimeOutlined, FileWordOutlined } from "@ant-design/icons"
+import { List, Skeleton, Space, Typography } from "antd"
 import BasicLayout from "components/templates/BasicLayout"
 import { motion } from "framer-motion"
 import { graphql, navigate } from "gatsby"
-import * as React from "react"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import React, { createElement } from "react"
 
 const { Title } = Typography
+
+const IconText = ({ icon, text }) => (
+  <Space>
+    {createElement(icon)}
+    {text}
+  </Space>
+)
 
 const BlogPage = ({
   location: { pathname, search, hash },
@@ -13,16 +22,22 @@ const BlogPage = ({
       edges,
       pageInfo: { totalCount, perPage, pageCount, currentPage },
     },
+    file,
   },
 }) => {
+  const avatarImage = getImage(file)
+
   const blogList = edges.map(({ node }) => {
     const {
       id,
-      body,
+      excerpt,
+      fields: {
+        timeToRead: { text, words },
+      },
       frontmatter: { title, date, slug, description },
     } = node
 
-    return { title, date, url: slug, id, body, description }
+    return { title, date, url: slug, id, excerpt, description, timeToRead: text, words }
   })
 
   const handleListItemClick = url => {
@@ -31,28 +46,56 @@ const BlogPage = ({
 
   return (
     <BasicLayout style={{ minHeight: "100%" }}>
+      <Typography>
+        <Title>Posts</Title>
+      </Typography>
       <List
+        bordered
         itemLayout="vertical"
         pagination={{ pageSize: perPage, position: "bottom", align: "center", total: totalCount, current: currentPage }}
         dataSource={blogList}
         rowKey={"id"}
-        renderItem={({ title, url, description }) => (
+        renderItem={({ title, url, description, excerpt, timeToRead, words }) => (
           <motion.div
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 0.95 }}
             whileTap={{ scale: 1 }}>
             <List.Item
+              actions={[
+                <IconText
+                  icon={FieldTimeOutlined}
+                  text={timeToRead}
+                  key="list-post-time-to-read"
+                />,
+                <IconText
+                  icon={FileWordOutlined}
+                  text={words}
+                  key="list-post-words"
+                />,
+                // <IconText
+                //   icon={EyeOutlined}
+                //   text={"-"}
+                //   key="list-post-views"
+                // />,
+              ]}
               extra={
-                <img
-                  width={272}
-                  alt="logo"
-                  src="https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png"
-                />
+                <Space
+                  style={{ height: "100%" }}
+                  align="center">
+                  <Skeleton.Image />
+                </Space>
               }
               onClick={() => handleListItemClick(url)}>
               <List.Item.Meta
                 title={title}
                 description={description}
+                avatar={
+                  <GatsbyImage
+                    image={avatarImage}
+                    alt="avatar"
+                  />
+                }
               />
+              {excerpt}
             </List.Item>
           </motion.div>
         )}
@@ -87,6 +130,13 @@ export const query = graphql`
             description
           }
           id
+          excerpt(pruneLength: 200)
+          fields {
+            timeToRead {
+              text
+              words
+            }
+          }
         }
       }
       pageInfo {
@@ -97,6 +147,11 @@ export const query = graphql`
         currentPage
         hasNextPage
         hasPreviousPage
+      }
+    }
+    file(relativePath: { eq: "icon.png" }) {
+      childImageSharp {
+        gatsbyImageData(width: 58)
       }
     }
   }

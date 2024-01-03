@@ -4,7 +4,7 @@ import React from "react"
 
 function NotFoundPage() {
   return (
-    <BasicLayout style={{ height: "100%" }}>
+    <BasicLayout full>
       <Row
         justify={"center"}
         align={"middle"}

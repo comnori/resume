@@ -1,14 +1,22 @@
-const path = require("path")
+import path from "path"
+import readingTime from "reading-time"
 
-exports.onCreateWebpackConfig = ({ stage, actions }) => {
+export const onCreateNode = ({ node, actions }) => {
+  const { createNodeField } = actions
+  if (node.internal.type === `Mdx`) {
+    createNodeField({ node, name: `timeToRead`, value: readingTime(node.body) })
+  }
+}
+
+export const onCreateWebpackConfig = ({ stage, actions }) => {
   actions.setWebpackConfig({
     resolve: {
-      modules: [path.resolve(__dirname, "src"), "node_modules"],
+      modules: [path.resolve("src"), "node_modules"],
     },
   })
 }
 
-exports.createPages = async ({ graphql, actions, reporter }) => {
+export const createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
 
   const result = await graphql(`

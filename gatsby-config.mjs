@@ -66,6 +66,7 @@ const config = {
               maxWidth: 590,
             },
           },
+          `gatsby-remark-responsive-iframe`,
         ],
         mdxOptions: {
           remarkPlugins: [remarkGfm, [remarkExternalLinks, { target: false }]],
