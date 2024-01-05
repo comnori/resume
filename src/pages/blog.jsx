@@ -71,11 +71,6 @@ const BlogPage = ({
                   text={words}
                   key="list-post-words"
                 />,
-                // <IconText
-                //   icon={EyeOutlined}
-                //   text={"-"}
-                //   key="list-post-views"
-                // />,
               ]}
               extra={
                 <Space
@@ -119,8 +114,8 @@ export const Head = () => {
 }
 
 export const query = graphql`
-  query MyQuery {
-    allMdx(skip: 0, limit: 10, sort: { frontmatter: { date: DESC } }) {
+  query posts {
+    allMdx(skip: 0, limit: 10, sort: { frontmatter: { date: DESC } }, filter: { frontmatter: { slug: { ne: null } } }) {
       edges {
         node {
           frontmatter {
@@ -151,7 +146,7 @@ export const query = graphql`
     }
     file(relativePath: { eq: "icon.png" }) {
       childImageSharp {
-        gatsbyImageData(width: 58)
+        gatsbyImageData(width: 91)
       }
     }
   }

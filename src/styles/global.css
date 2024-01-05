@@ -47,3 +47,7 @@ body {
 .command-line-prompt > span[data-prompt]:before {
   content: attr(data-prompt);
 }
+
+i[class^="devicon"] {
+  font-size: 3em;
+}

@@ -116,6 +116,13 @@ const config = {
         path: `./src/posts/`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `import-markdown`,
+        path: `./src/components/markdown/`,
+      },
+    },
   ],
 }
 

@@ -13,14 +13,19 @@
 ## 🚀 Quick start
 
 ```shell
-gatsby new my_site https://github.com/comnori/awesome-resume-starter
+gatsby new my_site https://github.com/comnori/gatsby-starter-comnori
 ```
 
 ## Features
 
 -   Responsive design
--   No settings
--
+-   Minimize development environment installation and settings
+    -   No need to install nodejs
+    -   No need to install gatsby-cli
+    -   No need to install vscde extensions
+-   `v1.0.0` does not support Typescript because the goal is to keep things simple.
+    -   This is because the goal of `v1.0.0` is to make it easy even for beginner developers.
+    -   `v2.0.0` will support Typescript, separate Eslint settings, SonarLint support, etc.
 
 ## Start
 
@@ -45,34 +50,17 @@ gatsby new my_site https://github.com/comnori/awesome-resume-starter
 
 This gatsby starter was written to be used for resume, portfolios, and blogs.
 
-## TechSpec
+## Tech Stack
 
 -   GATSBY
 -   Antd
 -   React
 -   DevContainer
 
-## ETC
+## FAQ
 
 ### Why not use Yarn 2
 
 -   [Yarn2 issues](https://github.com/gatsbyjs/gatsby/discussions/20949)
     -   Not answerd yet
     -   Document does not provide for yarn 2
-
-## Reference
-
-### Gatsby
-
--   [Gatsby Head API](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/)
--   [Make a layout template for your posts](https://www.gatsbyjs.com/docs/how-to/routing/mdx/#make-a-layout-template-for-your-posts)
--   [Adding a Redux Store](https://www.gatsbyjs.com/docs/adding-redux-store/)
--   [How Gatsby Works with GitHub Pages](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/how-gatsby-works-with-github-pages/)
-
-### MDX
-
--   [Components](https://mdxjs.com/table-of-components/)
-
-### Libraries
-
--   [Ant Design](https://ant.design/)

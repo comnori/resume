@@ -28,7 +28,6 @@ const Footer = () => {
       <Row justify={"center"}>
         <Col>
           <Space align="center">
-            <Text></Text>
             <Space split={<Divider type="vertical" />}>
               <Text>© All rights are reserved. 2020</Text>
               <Space>
