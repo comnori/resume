@@ -19,6 +19,7 @@ gatsby new my_site https://github.com/comnori/gatsby-starter-comnori
 ## Features
 
 -   Responsive design
+-   Google Analytics integration
 -   Minimize development environment installation and settings
     -   No need to install nodejs
     -   No need to install gatsby-cli
@@ -42,9 +43,14 @@ gatsby new my_site https://github.com/comnori/gatsby-starter-comnori
 
 1. Get starter
 2. Open in Visual Studio Code
-3. install devcontiner extension
+3. install `devcontiner` extension
 4. DevContainer build and run
-5. Run `yarn start` or `gatsby develop` in container
+5. make file `.env.development` and `.env.production`
+6. write your `GA_ID` in `.env.development` and `.env.production`
+    ```
+    GA_ID=xxxxxxxxx
+    ```
+7. Run `yarn start` or `gatsby develop` in container
 
 ## Purpose
 
