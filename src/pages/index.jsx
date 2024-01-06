@@ -122,7 +122,7 @@ const IndexPage = ({ data: { file } }) => {
     <BasicLayout>
       <Row justify={"center"}>
         <Col>
-          <Card hoverable>
+          <Card>
             <Flex justify="space-between">
               <GatsbyImage
                 image={cardImage}
@@ -137,6 +137,7 @@ const IndexPage = ({ data: { file } }) => {
                 <Typography>
                   <Title>Hello, I'm Yongsik Yun! 🤚</Title>
                   <Title level={2}>- A FULL-STACK WEB DEVELOPER</Title>
+                  <Title level={3}>Creating new things through development is my highest art. </Title>
                 </Typography>
               </Flex>
             </Flex>
