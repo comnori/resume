@@ -99,7 +99,6 @@ const BlogPage = ({
   )
 }
 
-export default BlogPage
 
 export const Head = () => {
   return (
@@ -108,7 +107,7 @@ export const Head = () => {
       <meta
         name="desciption"
         content="Developer Comnori's blog"
-      />
+        />
     </>
   )
 }
@@ -151,3 +150,4 @@ export const query = graphql`
     }
   }
 `
+export default BlogPage

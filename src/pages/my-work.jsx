@@ -38,7 +38,7 @@ const workingList = [
   {
     key: 2,
     title: "DevOps template Awesome SOHO",
-    description: "",
+    description: "SOHO에서 사용하기 적합한 DevOps 패키지를 종합하여 개발환경 구축을 손쉽게 구축합니다.",
     url: "https://github.com/users/comnori/projects/6",
     icon: GithubOutlined,
     isPrivate: true,
