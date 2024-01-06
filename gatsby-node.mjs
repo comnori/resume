@@ -41,7 +41,7 @@ export const createPages = async ({ graphql, actions, reporter }) => {
 
   // Create blog post pages.
   const posts = result.data.allMdx.nodes
-  const postsBase = "/posts"
+  const postsBase = "/blog"
   const postTemplate = path.resolve("./src/components/templates/PostTemplate.jsx")
 
   // you'll call `createPage` for each result

@@ -163,4 +163,16 @@ const MyWorkPage = () => {
   )
 }
 
+export const Head = () => {
+  return (
+    <>
+      <title>My works</title>
+      <meta
+        name="desciption"
+        content="Introduction to ongoing or completed development projects"
+      />
+    </>
+  )
+}
+
 export default MyWorkPage
