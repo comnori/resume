@@ -10,6 +10,10 @@
   This starter was created by <a href=https://github.com/comnori/frontend-starter>Frontend-starter</a>
 </h2>
 
+## important!
+
+This repository is for testing purposes only.
+
 ## 🚀 Quick start
 
 ```shell
