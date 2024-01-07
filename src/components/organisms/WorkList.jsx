@@ -1,5 +1,5 @@
 import Icon from "@ant-design/icons/lib/components/Icon"
-import { Card, List, Space, Tag, Typography, Watermark } from "antd"
+import { Card, Divider, List, Space, Tag, Typography, Watermark } from "antd"
 import { Link } from "gatsby"
 import * as React from "react"
 
@@ -40,6 +40,7 @@ const WorkList = ({ dataSource }) => {
               hoverable>
               <Typography>
                 <Text>{description}</Text>
+                <Divider />
                 <Space wrap>
                   {tags.map((value, idx) => (
                     <Tag key={idx}>{value}</Tag>

@@ -7,9 +7,10 @@ import remarkGfm from "remark-gfm"
 dotenv.config({ path: `.env.${process.env.NODE_ENV}` })
 
 const config = {
+  pathPrefix: "/resume",
   siteMetadata: {
     title: `Developer Yongsik Yun!`,
-    siteUrl: `https://comnori.co.kr`,
+    siteUrl: `https://comnori.github.com/resume`,
     twitterUsername: `@comnori`,
     image: `src/images/icon.png`,
   },

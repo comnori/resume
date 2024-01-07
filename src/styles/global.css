@@ -51,3 +51,35 @@ body {
 i[class^="devicon"] {
   font-size: 3em;
 }
+
+#for-print {
+  display: none;
+}
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 10mm;
+  }
+
+  html,
+  body,
+  #___gatsby,
+  #gatsby-focus-wrapper {
+    overflow: visible;
+    height: fit-content;
+  }
+
+  .ant-layout-header,
+  .ant-layout-footer {
+    display: none !important;
+  }
+
+  .ant-row {
+    break-after: auto;
+  }
+
+  #for-print {
+    display: block;
+  }
+}

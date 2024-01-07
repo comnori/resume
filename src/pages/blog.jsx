@@ -41,7 +41,7 @@ const BlogPage = ({
   })
 
   const handleListItemClick = url => {
-    navigate(`/posts${url}`)
+    navigate(`/blog${url}`)
   }
 
   return (
@@ -99,7 +99,6 @@ const BlogPage = ({
   )
 }
 
-
 export const Head = () => {
   return (
     <>
@@ -107,7 +106,7 @@ export const Head = () => {
       <meta
         name="desciption"
         content="Developer Comnori's blog"
-        />
+      />
     </>
   )
 }

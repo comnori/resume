@@ -1,12 +1,14 @@
 import { SyncOutlined } from "@ant-design/icons"
 import { Card, Col, Descriptions, Flex, Row, Tag, Timeline, Typography } from "antd"
 import TechStack from "components/markdown/tech-stack.mdx"
+import WorkList from "components/organisms/WorkList"
 import BasicLayout from "components/templates/BasicLayout"
-import { graphql } from "gatsby"
+import { releaseList, workingList } from "config/workList"
+import { Link, graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import * as React from "react"
 
-const { Title } = Typography
+const { Title, Text } = Typography
 
 const descItemList = [
   {
@@ -143,22 +145,53 @@ const IndexPage = ({ data: { file } }) => {
             </Flex>
           </Card>
         </Col>
+        <Col>
+          <Typography>
+            <Title>My Career</Title>
+            <Descriptions
+              title="User Info"
+              bordered
+              items={descItemList}
+            />
+            <Title level={2}>Career</Title>
+            <Timeline
+              mode="left"
+              items={timelineItemList}
+            />
+          </Typography>
+        </Col>
       </Row>
-      <Typography>
-        <Title>My Career</Title>
-        <Descriptions
-          title="User Info"
-          bordered
-          items={descItemList}
-        />
-        <Title level={2}>Career</Title>
-        <Timeline
-          mode="left"
-          items={timelineItemList}
-        />
-        <Title level={2}>Tech Stack</Title>
-        <TechStack />
-      </Typography>
+      <Row justify={"center"}>
+        <Col>
+          <Typography>
+            <Title
+              level={2}
+              className="page-break">
+              Tech Stack
+            </Title>
+            <TechStack />
+          </Typography>
+        </Col>
+      </Row>
+      <div id="for-print">
+        <Row>
+          <Col>
+            <Typography>
+              <Title level={2}>Release</Title>
+              <WorkList dataSource={releaseList} />
+              <Title level={2}>Working</Title>
+              <WorkList dataSource={workingList} />
+            </Typography>
+          </Col>
+        </Row>
+        <Row justify={"center"}>
+          <Col>
+            <Text>
+              You can view the resume at <Link to="https://comnori.github.com">https://comnori.github.com</Link>.
+            </Text>
+          </Col>
+        </Row>
+      </div>
     </BasicLayout>
   )
 }
